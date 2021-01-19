@@ -6,6 +6,6 @@ RUN cargo install cargo-kcov
 
 RUN apt update
 
-RUN apt install -y libcurl4-openssl-dev libelf-dev libdw-dev cmake gcc
+RUN apt install -y libcurl4-openssl-dev libelf-dev libdw-dev cmake gcc libbfd-dev
 
 RUN cargo kcov --print-install-kcov-sh | sh
