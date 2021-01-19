@@ -1,0 +1,11 @@
+FROM rust
+
+RUN rustup component add rustfmt
+RUN rustup component add clippy
+RUN cargo install cargo-kcov
+
+RUN apt update
+
+RUN apt install -y libcurl4-openssl-dev libelf-dev libdw-dev cmake gcc
+
+RUN cargo kcov --print-install-kcov-sh | sh
